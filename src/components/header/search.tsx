@@ -1,6 +1,6 @@
 "use client";
-import { devices, theme } from "@/app/global.style";
 import styled from "styled-components";
+import { devices, theme } from "@/app/global.style";
 
 const DivSearch = styled.div`
   width: 600px;
@@ -26,7 +26,7 @@ export const ImageInput = styled.img`
   width: 20px;
   height: 20px;
   @media ${devices.sm} {
-    translate: -40px 8px;
+    translate: -40px 12px;
   }
 `;
 

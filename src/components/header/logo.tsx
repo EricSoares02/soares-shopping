@@ -1,4 +1,4 @@
-import { devices, theme } from "@/app/global.style";
+import { theme } from "@/app/global.style";
 import styled from "styled-components";
 
 const DivLogo = styled.div`

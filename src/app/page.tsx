@@ -1,9 +1,10 @@
 "use client";
-import Load from "@/components/loading/loading";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 import { theme } from "./global.style";
 import NavBar from "@/components/header/header";
 import SearchMobile from "@/components/header/searchMobile";
+import Load from "@/components/loading/loading";
+import Slider from "@/components/main-page/slider/slider";
 
 const GlobalStyle = createGlobalStyle`
 * {
@@ -33,7 +34,7 @@ export default function Home() {
       <NavBar />
       <main>
         <SearchMobile></SearchMobile>
-        <Load/>
+        <Slider></Slider>
       </main>
     </ThemeProvider>
   );

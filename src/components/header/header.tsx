@@ -1,8 +1,8 @@
 import styled from "styled-components";
+import { theme } from "@/app/global.style";
 import Logo from "./logo";
 import Search from "./search";
 import Options from "./options";
-import { theme } from "@/app/global.style";
 
 
 const Nav = styled.header`
