@@ -1,10 +1,9 @@
 "use client";
+import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 import { theme } from "./global.style";
 import NavBar from "@/components/header/header";
-import SearchMobile from "@/components/header/searchMobile";
-import Load from "@/components/loading/loading";
-import Slider from "@/components/main-page/slider/slider";
+import App from "./home";
 
 const GlobalStyle = createGlobalStyle`
 * {
@@ -27,15 +26,23 @@ height: auto;
 }
 `;
 
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      staleTime: 1000 * 60 * 60,
+    },
+  },
+});
+
 export default function Home() {
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <NavBar />
-      <main>
-        <SearchMobile></SearchMobile>
-        <Slider></Slider>
-      </main>
-    </ThemeProvider>
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <NavBar />
+        <App />
+      </ThemeProvider>
+    </QueryClientProvider>
   );
 }

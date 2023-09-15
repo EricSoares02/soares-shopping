@@ -1,5 +1,5 @@
-import { devices } from "@/app/global.style";
 import styled from "styled-components";
+import { devices } from "@/app/global.style";
 import { ImageInput } from "./search";
 
 const SearchInputMobile = styled.input`
@@ -15,7 +15,7 @@ const SearchInputMobile = styled.input`
 
 const DivInputMobile = styled.div`
   display: none;
-  height: 50px;
+  height: 60px;
   width: 100%;
   padding: 8px;
   box-shadow: 0 0 14px ${(props) => props.theme.colors.shadowcolor};
