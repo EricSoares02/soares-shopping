@@ -1,4 +1,4 @@
-export type PropsProduct = {
+export interface PropsProduct {
     id: string;
     name: string;
     category: string;

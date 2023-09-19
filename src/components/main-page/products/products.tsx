@@ -1,6 +1,6 @@
 import Load from "@/components/loading/loading";
 import { converterParaReal } from "@/hooks/useConversor";
-import { PropsProduct } from "@/models/product";
+import { PropsProduct } from "@/types/product";
 import { api } from "@/services/api";
 import Link from "next/link";
 import { useQuery } from "react-query";
@@ -85,8 +85,6 @@ const { data, isLoading } = useQuery({
     queryFn: getProducts,
   });
 
-  console.log(`value é:${data}`);
-
   if (isLoading) {
     return <Load />;
   }
@@ -96,7 +94,7 @@ const { data, isLoading } = useQuery({
       <ProductConteiner>
         {data.products.map((value: PropsProduct) => (
           <ProductCase key={value.id}>
-            <Link href={`/product/[id]=${value.id}`}>
+            <Link href={`/product?id=${value.id}`}>
               <ProductImgConteiner>
                 <ProductImg src={value.url_img}></ProductImg>
               </ProductImgConteiner>
