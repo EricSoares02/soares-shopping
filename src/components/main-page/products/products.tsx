@@ -1,10 +1,11 @@
 import Load from "@/components/loading/loading";
 import { converterParaReal } from "@/hooks/useConversor";
+import { useProducts } from "@/hooks/useGetProducts";
 import { PropsProduct } from "@/types/product";
-import { api } from "@/services/api";
 import Link from "next/link";
-import { useQuery } from "react-query";
 import styled from "styled-components";
+
+
 
 const Conteiner = styled.section`
   padding: 15px;
@@ -73,20 +74,11 @@ const ProductDesc = styled.div`
 `;
 
 export default function Products() {
-  const getProducts = async () => {
-    const response = await api
-      .get("http://localhost:3333/produtos")
-      .then((response) => response.data);
-    return response;
-  };
-
-const { data, isLoading } = useQuery({
-    queryKey: ["products"],
-    queryFn: getProducts,
-  });
+  
+  const {data, isLoading} = useProducts()
 
   if (isLoading) {
-    return <Load />;
+    return(<Load/>)
   }
   return (
     <Conteiner>
