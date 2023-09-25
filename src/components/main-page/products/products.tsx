@@ -5,8 +5,6 @@ import { PropsProduct } from "@/types/product";
 import Link from "next/link";
 import styled from "styled-components";
 
-
-
 const Conteiner = styled.section`
   padding: 15px;
   width: 100%;
@@ -26,7 +24,7 @@ const ProductConteiner = styled.div`
   gap: 15px;
   margin: 32px 0;
   padding: 15px;
-  &  a {
+  & a {
     text-decoration: none;
     color: black;
     width: 100%;
@@ -41,6 +39,7 @@ const ProductCase = styled.div`
   flex-direction: column;
   transition: 0.8s;
   padding-bottom: 50px;
+  background-color: ${(props) => props.theme.colors.white};
   &:hover {
     box-shadow: 0 0 7px ${(props) => props.theme.colors.shadowcolor};
   }
@@ -74,17 +73,16 @@ const ProductDesc = styled.div`
 `;
 
 export default function Products() {
-  
-  const {data, isLoading} = useProducts()
+  const { data, isLoading } = useProducts();
 
   if (isLoading) {
-    return(<Load/>)
+    return <Load />;
   }
   return (
     <Conteiner>
       <Text>Produtos</Text>
       <ProductConteiner>
-        {data.products.map((value: PropsProduct) => (
+        {data?.products.map((value: PropsProduct) => (
           <ProductCase key={value.id}>
             <Link href={`/product?id=${value.id}`}>
               <ProductImgConteiner>

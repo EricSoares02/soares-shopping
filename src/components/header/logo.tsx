@@ -1,4 +1,3 @@
-import { theme } from "@/app/global.style";
 import styled from "styled-components";
 
 const DivLogo = styled.div`
@@ -11,10 +10,10 @@ const DivLogo = styled.div`
 `;
 const LinkLogo = styled.a`
   text-decoration: none;
-  color: ${theme.colors.headerBg};
+  color: ${(props) => props.theme.colors.white};
   font-weight: bolder;
-  cursor: pointer;
   font-size: 18px;
+  cursor: pointer;
 `;
 
 export default function Logo() {

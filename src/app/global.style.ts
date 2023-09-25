@@ -1,11 +1,15 @@
 export const theme = {
   colors: {
     shadowcolor: "#aaaa",
-    headerBg: "#fff",
+    white: "#fff",
     headerBg2: "#1e6fd9",
     bg: "#d9d9d9",
     color: "#f2f2f2",
+    blackBlue: "#033E8C"
   },
+  transition:{
+    transition: "1.2s"
+  }
 };
 
 const breakpoints = {
