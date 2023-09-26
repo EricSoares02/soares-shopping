@@ -1,3 +1,4 @@
+import { devices } from "@/app/global.style";
 import styled from "styled-components";
 
 const Btn = styled.button`
@@ -12,13 +13,13 @@ const Btn = styled.button`
   width: 130px;
   height: 45px;
   background-color: transparent;
-  color: black;
   transition: ${(props) => props.theme.transition.transition};
   margin:  0 0 0px 20px;
  &:hover{
   background-color: ${(props) => props.theme.colors.headerBg2};
   color: ${(props) => props.theme.colors.white};
  }
+ 
 `;
 
 export default function AddCart(){

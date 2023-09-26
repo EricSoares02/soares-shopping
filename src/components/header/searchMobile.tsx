@@ -14,6 +14,8 @@ const SearchInputMobile = styled.input`
 `;
 
 const DivInputMobile = styled.div`
+position: fixed;
+background-color: ${(props) => props.theme.colors.white};
   display: none;
   height: 60px;
   width: 100%;

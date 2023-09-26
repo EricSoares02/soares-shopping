@@ -1,3 +1,5 @@
+
+// themes how colors and trasitions
 export const theme = {
   colors: {
     shadowcolor: "#aaa",
@@ -12,6 +14,7 @@ export const theme = {
   }
 };
 
+// breakpoints for all screen types 
 const breakpoints = {
   xs: "320px",
   sm: "640px",
@@ -21,6 +24,7 @@ const breakpoints = {
   "2xl": "1536px",
 };
 
+// devices to use on resposivity features 
 export const devices = {
   xs: `(max-width: ${breakpoints.xs})`,
   sm: `(max-width: ${breakpoints.sm})`,
@@ -30,17 +34,3 @@ export const devices = {
   "2xl": `(max-width: ${breakpoints["2xl"]})`,
 };
 
-
-// @media ${devices.xs} {
-    
-// }
-// @media ${devices.sm} {
-// }
-// @media ${devices.md} {
-// }
-// @media ${devices.lg} {
-  
-// }
-// @media ${devices.xl} {
-  
-// }
