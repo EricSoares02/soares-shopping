@@ -3,13 +3,15 @@ import { useProduct } from "@/hooks/useGetProduct";
 import styled from "styled-components";
 import { converterParaReal } from "./../../../hooks/useConversor";
 import AddBtnCart from "@/utils/addToCart";
+import AddBtnFavorite from "@/utils/addToFavorite";
 
 const ProductCase = styled.div`
-  width: 1000px;
+  width: 100%;
   height: auto;
   display: grid;
+  padding: 50px;
+  justify-content: space-around;
   grid-template-columns: repeat(2, auto);
-  box-shadow: 0 0 7px ${(props) => props.theme.colors.shadowcolor};
 `;
 const ProductImg = styled.div`
   width: 500px;
@@ -17,11 +19,12 @@ const ProductImg = styled.div`
   & img {
     width: 100%;
     height: 100%;
+    border-radius: 18px;
   }
 `;
 
 const ProductDesc = styled.div`
-  width: 500px;
+  width: 700px;
   height: 700px;
   display: block;
   & h1 {
@@ -45,12 +48,11 @@ const Price = styled.div`
 const BtnConteiner = styled.div`
   display: flex;
   justify-content: center;
-  width: 500px;
+  gap: 8px;
+  width: 700px;
   height: auto;
   position: absolute;
   bottom: 30px;
-
-  /* padding-bottom: 10px ; */
 `;
 export default function Product(value: string) {
   const { data, isLoading } = useProduct(value);
@@ -64,7 +66,6 @@ export default function Product(value: string) {
       <ProductImg>
         <img src={data?.data.url_img} alt="img" />
       </ProductImg>
-
       <ProductDesc>
         <h1>{data?.data.name.toUpperCase()}</h1>
         <p>{data?.data.desc}</p>
@@ -73,7 +74,8 @@ export default function Product(value: string) {
           <p>Categoria: {data?.data.category}</p>
         </Price>
         <BtnConteiner>
-          <AddBtnCart></AddBtnCart>
+          <AddBtnCart />
+          <AddBtnFavorite />
         </BtnConteiner>
       </ProductDesc>
     </ProductCase>

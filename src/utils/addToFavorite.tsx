@@ -1,12 +1,11 @@
 import styled from "styled-components";
 
 const Btn = styled.button`
-  background-color: transparent;
-  border: solid gray;
-  border-radius: 9999px;
-  width: 30px;
-  height: 30px;
-  z-index: 500;
+  background-color: #F0F0F0;
+  border: none;
+  border-radius: 12px;
+  width: 80px;
+  height: 65px;
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -15,8 +14,8 @@ const Btn = styled.button`
 `;
 const ImageBtn = styled.img`
   
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
 `;
 
 export default function AddBtnFavorite() {

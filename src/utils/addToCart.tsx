@@ -15,6 +15,7 @@ const Btn = styled.button`
   align-items: center;
   width: 450px;
   height: 65px;
+  gap: 14px;
   background-color: ${(props) => props.theme.colors.blackBlue};
   color: ${(props) => props.theme.colors.white};
   transition: ${(props) => props.theme.transition.transition};
@@ -23,9 +24,9 @@ const Btn = styled.button`
  }
 `;
 const ImageBtn = styled.img`
-  translate: 80px 0px;
-  width: 45px;
-  height: 45px;
+  /* translate: 80px 0px; */
+  width: 30px;
+  height: 30px;
 `;
 
 export default function AddBtnCart() {
@@ -33,8 +34,8 @@ export default function AddBtnCart() {
   return (
     <Conteiner>
       <Btn>
+        <ImageBtn src="/bagForBtn.svg"></ImageBtn>
         ADD TO CART
-        <ImageBtn src="/bag.svg"></ImageBtn>
       </Btn>
       
     </Conteiner>

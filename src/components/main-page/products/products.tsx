@@ -90,7 +90,7 @@ const ProductDesc = styled.div`
     color: ${(props) => props.theme.colors.shadowcolor};
     font-size: 11px;
   }
-  /* @media ${devices.sm} {
+  @media ${devices.sm} {
   height: 55px;
   h2 {
     font-size: 12px;
@@ -98,7 +98,7 @@ const ProductDesc = styled.div`
   h3 {
     font-size: 10px;
   }
-  } */
+  }
 `;
 const PriceAndButton = styled.div`
   width: 100%;
@@ -109,11 +109,11 @@ const PriceAndButton = styled.div`
   p {
     font-size: 14px;
   }
-  /* @media ${devices.sm} {
+  @media ${devices.sm} {
     &p{
       font-size: 12px;
     }
-  } */
+  }
 `;
 
 export default function Products() {
