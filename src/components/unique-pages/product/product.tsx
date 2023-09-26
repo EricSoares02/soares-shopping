@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { converterParaReal } from "./../../../hooks/useConversor";
 import AddBtnCart from "@/utils/addToCart";
 import AddBtnFavorite from "@/utils/addToFavorite";
+import { devices } from "@/app/global.style";
 
 const ProductCase = styled.div`
   width: 100%;
@@ -12,7 +13,15 @@ const ProductCase = styled.div`
   padding: 50px;
   justify-content: space-around;
   grid-template-columns: repeat(2, auto);
+  @media ${devices.sm} {
+    display: block;
+    justify-content: center;
+  }
+
 `;
+
+
+
 const ProductImg = styled.div`
   width: 500px;
   height: 700px;
@@ -20,6 +29,13 @@ const ProductImg = styled.div`
     width: 100%;
     height: 100%;
     border-radius: 18px;
+  }
+
+  @media ${devices.lg} {
+    width: 400px;
+  }
+  @media ${devices.sm} {
+    width: 100%;
   }
 `;
 
@@ -38,6 +54,12 @@ const ProductDesc = styled.div`
     text-align: justify;
     padding: 15px;
   }
+  @media ${devices.lg} {
+    width: 400px;
+  }
+  @media ${devices.sm} {
+    width: 100%;
+  }
 `;
 
 const Price = styled.div`
@@ -53,6 +75,12 @@ const BtnConteiner = styled.div`
   height: auto;
   position: absolute;
   bottom: 30px;
+  @media ${devices.lg} {
+    justify-content: start;
+  }
+  @media ${devices.sm} {
+    width: 100%;
+  }
 `;
 export default function Product(value: string) {
   const { data, isLoading } = useProduct(value);
