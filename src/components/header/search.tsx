@@ -1,6 +1,8 @@
 "use client";
 import styled from "styled-components";
 import { devices, theme } from "@/app/global.style";
+import { FormEvent, useState } from "react";
+import { useRouter } from "next/navigation";
 
 const DivSearch = styled.div`
   width: 600px;
@@ -10,7 +12,11 @@ const DivSearch = styled.div`
     display: none;
   }
 `;
-
+const Form = styled.form`
+  width: 100%;
+  height: 100%;
+  display: flex;
+`;
 const SearchInput = styled.input`
   width: 100%;
   height: 100%;
@@ -30,14 +36,34 @@ export const ImageInput = styled.img`
   }
 `;
 
+const Submit = styled.input`
+  width: 1px;
+  height: 1px;
+  background-color: transparent;
+  border: none;
+`;
+
 export default function Search() {
+
+  const router = useRouter();
+  async function onSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    const formData = new FormData(event.currentTarget);
+    const data = formData.get('text')
+    router.push(`/search?value=${data}`)
+ 
+  }
   return (
     <DivSearch>
-      <SearchInput
-        type="text"
-        placeholder="Search your new style here ..."
-      ></SearchInput>
-    <ImageInput src="/lupa.svg"></ImageInput>
+      <Form onSubmit={onSubmit}>
+        <SearchInput
+          type="text"
+          name="text"
+          placeholder="Search your new style here ..."
+        />
+        <Submit type="submit" />
+      </Form>
+      <ImageInput src="/lupa.svg"></ImageInput>
     </DivSearch>
   );
 }
