@@ -6,6 +6,7 @@ import { ThemeProvider, createGlobalStyle } from "styled-components";
 import { theme } from './global.style';
 import NavBar from '@/components/header/header';
 
+
 const GlobalStyle = createGlobalStyle`
 * {
   box-sizing: border-box;

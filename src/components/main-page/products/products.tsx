@@ -117,9 +117,9 @@ const PriceAndButton = styled.div`
 `;
 
 export default function Products() {
-  const { data } = useProducts();
 
-  if (!data) {
+  const { data, isLoading} = useProducts();
+  if (isLoading && data==undefined) {
     return <Load />;
   }
   return (

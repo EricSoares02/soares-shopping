@@ -3,7 +3,7 @@ import { PropsProduct } from "@/types/product";
 import { AxiosPromise } from "axios";
 import { useQuery } from "react-query";
 
-const getSearchProduct = (searchParamsProduct: string): AxiosPromise<PropsProduct> => {
+const getSearchProduct = async (searchParamsProduct: string) => {
   return api
     .get(`http://localhost:3333/search/value?filter=${searchParamsProduct}`)
     .then((response) => response.data);
@@ -12,7 +12,7 @@ const getSearchProduct = (searchParamsProduct: string): AxiosPromise<PropsProduc
 
 export function useSearchProducts(params:string){
 
-    const { data, isLoading } = useQuery({
+     const { data, isLoading } = useQuery({
         queryKey: ["products", params],
         queryFn: () => getSearchProduct(params),
         enabled: !!params,
