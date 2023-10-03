@@ -4,6 +4,7 @@ import { Poppins } from 'next/font/google'
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 import { theme } from './global.style';
+import NavBar from '@/components/header/header';
 
 const GlobalStyle = createGlobalStyle`
 * {
@@ -47,7 +48,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="utf-8">
-      <body className={poppins.className}><QueryClientProvider client={queryClient} contextSharing={true}><ThemeProvider theme={theme}><GlobalStyle />{children}</ThemeProvider></QueryClientProvider></body>
+      <body className={poppins.className}><QueryClientProvider client={queryClient} contextSharing={true}><ThemeProvider theme={theme}><GlobalStyle /><NavBar />{children}</ThemeProvider></QueryClientProvider></body>
     </html>
   )
 }

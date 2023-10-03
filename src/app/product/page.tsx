@@ -1,6 +1,5 @@
 "use client";
 import styled from "styled-components";
-import NavBar from "@/components/header/header";
 import BackBtn from "@/utils/backBtn";
 import Product from "@/components/unique-pages/product/product";
 
@@ -33,7 +32,6 @@ export default function ProductPage({
 }) {
   return (
     <>
-      <NavBar />
       <Conteiner>
         <BtnCase>
           <BackBtn />
