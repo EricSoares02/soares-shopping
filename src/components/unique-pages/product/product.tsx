@@ -6,6 +6,7 @@ import AddBtnCart from "@/utils/addToCart";
 import AddBtnFavorite from "@/utils/addToFavorite";
 import { devices } from "@/app/global.style";
 
+
 const ProductCase = styled.div`
   width: 100%;
   height: auto;
@@ -19,8 +20,6 @@ const ProductCase = styled.div`
   }
 
 `;
-
-
 
 const ProductImg = styled.div`
   width: 500px;
@@ -89,6 +88,7 @@ export default function Product(value: string) {
     return <Load />;
   }
 
+  
   return (
     <ProductCase>
       <ProductImg>
@@ -102,7 +102,7 @@ export default function Product(value: string) {
           <p>Categoria: {data?.data.category}</p>
         </Price>
         <BtnConteiner>
-          <AddBtnCart />
+          {AddBtnCart(data?.data)}
           <AddBtnFavorite />
         </BtnConteiner>
       </ProductDesc>

@@ -1,3 +1,4 @@
+"use client";
 import { devices } from "@/app/global.style";
 import styled from "styled-components";
 
@@ -28,9 +29,23 @@ const ImageBtn = styled.img`
   height: 30px;
 `;
 
-export default function AddBtnCart() {
+export default function AddBtnCart(data: any) {
+  
+
+  function hadleAddToCart() {
+    if (localStorage.hasOwnProperty("cartItem")) {
+     let cartArray = new Array;
+     cartArray = (JSON.parse(localStorage.getItem('cartItem') || '[]'));
+     cartArray.push(data)
+    localStorage.setItem("cartItem", JSON.stringify(cartArray));
+     
+    } else {
+      localStorage.setItem("cartItem", JSON.stringify([data]));
+    }
+  }
+
   return (
-    <Btn>
+    <Btn onClick={hadleAddToCart}>
       <ImageBtn src="/bagForBtn.svg"></ImageBtn>
       ADD TO CART
     </Btn>
