@@ -29,16 +29,30 @@ const ImageBtn = styled.img`
   height: 30px;
 `;
 
-export default function AddBtnCart(data: any) {
-  
-
+export default function AddBtnCart(product: any) {
   function hadleAddToCart() {
+    // criando novo array com todos atributos de product e quantidade
+    let data = {...product, quatity:1}
+    //verificando se ja existe o carrinho
     if (localStorage.hasOwnProperty("cartItem")) {
-     let cartArray = new Array;
-     cartArray = (JSON.parse(localStorage.getItem('cartItem') || '[]'));
-     cartArray.push(data)
-    localStorage.setItem("cartItem", JSON.stringify(cartArray));
-     
+      // se o carrinho ja existe, é criado um array para assumir o carrinho do localStorage 
+      let cartArray = new Array();
+      // convertendo o carrinho em Object e atrubuindo ao array anterior
+      cartArray = JSON.parse(localStorage.getItem("cartItem") || "[]");
+      // procurando index de um possivel item já existente no array, e atribuindo ele a uma variável
+      let itemIndex = cartArray.findIndex((item) => item.id === data.id);
+      //verificando se o index é correspondente à algun item do array
+      if (itemIndex >=0) {
+        // se o item exite, aumentamos a quantidade
+        console.log(`tit${cartArray[itemIndex].quatity }`);
+        cartArray[itemIndex].quatity = cartArray[itemIndex].quatity + 1;
+        localStorage.setItem("cartItem", JSON.stringify(cartArray));
+      } else {
+        //se o item não existe no carrinho, adicionamos normalmente
+        cartArray.push(data);
+        localStorage.setItem("cartItem", JSON.stringify(cartArray));
+      }
+      //se o carrinho não existe, criamos e adicionamos o item
     } else {
       localStorage.setItem("cartItem", JSON.stringify([data]));
     }

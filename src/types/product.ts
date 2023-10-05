@@ -6,3 +6,9 @@ export interface PropsProduct {
     price_in_cent: number,
     url_img: string
   };
+
+  export interface PropsCartProduct extends PropsProduct{
+
+    quatity: number
+
+  }
