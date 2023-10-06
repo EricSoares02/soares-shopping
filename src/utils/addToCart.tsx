@@ -32,7 +32,7 @@ const ImageBtn = styled.img`
 export default function AddBtnCart(product: any) {
   function hadleAddToCart() {
     // criando novo array com todos atributos de product e quantidade
-    let data = {...product, quatity:1}
+    let data = {...product, quatity:1, cheked:true}
     //verificando se ja existe o carrinho
     if (localStorage.hasOwnProperty("cartItem")) {
       // se o carrinho ja existe, é criado um array para assumir o carrinho do localStorage 
