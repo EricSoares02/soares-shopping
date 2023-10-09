@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import Link from "next/link";
 
-
 const DivOptions = styled.div`
 width: 300px;
 height: 100%;

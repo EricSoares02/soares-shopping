@@ -1,7 +1,7 @@
 "use client";
 import styled from "styled-components";
 import { devices, theme } from "@/app/global.style";
-import { FormEvent, useState } from "react";
+import { FormEvent } from "react";
 import { useRouter } from "next/navigation";
 
 const DivSearch = styled.div`

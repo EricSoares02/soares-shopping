@@ -5,8 +5,6 @@ const DivLogo = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-left: 30px;
- 
 `;
 const LinkLogo = styled.a`
   text-decoration: none;
