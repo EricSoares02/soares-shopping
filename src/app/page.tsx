@@ -6,6 +6,7 @@ import "dotenv";
 import Footer from "@/components/footer/footer";
 
 
+
 export default function Home() {
  
   return (

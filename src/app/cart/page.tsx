@@ -13,7 +13,7 @@ const Conteiner = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color: ${(props) => props.theme.colors.color};
+  background-color: ${(props) => props.theme.colors.bg};
 `;
 const BacBtnCase = styled.div`
   width: 100%;

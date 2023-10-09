@@ -22,7 +22,7 @@ const SearchInput = styled.input`
   height: 100%;
   border: transparent;
   border-radius: 24px;
-  background-color: ${theme.colors.color};
+  background-color: ${theme.colors.bg};
   padding-left: 30px;
   outline: 0;
 `;

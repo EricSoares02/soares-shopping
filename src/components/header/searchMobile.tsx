@@ -7,7 +7,7 @@ const SearchInputMobile = styled.input`
   width: 100%;
   border: transparent;
   border-radius: 24px;
-  background-color: ${(props) => props.theme.colors.color};
+  background-color: ${(props) => props.theme.colors.bg};
   padding-left: 30px;
   outline: 0;
   font-size: 11px;

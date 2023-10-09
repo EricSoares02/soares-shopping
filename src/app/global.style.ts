@@ -5,13 +5,13 @@ export const theme = {
     shadowcolor: "#aaa",
     white: "#fff",
     headerBg2: "#1e6fd9",
-    bg: "#d9d9d9",
-    color: "#f2f2f2",
+    bg: "#f2f2f2",
     blackBlue: "#033E8C"
   },
   transition:{
     transition: "1.2s"
-  }
+  },
+  length: "1200px"
 };
 
 // breakpoints for all screen types 
