@@ -5,8 +5,10 @@ import Image from "next/image";
 const Btn = styled.button`
   background-color: transparent;
   border: none;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center; 
   &:hover {
    cursor: pointer;
   }
@@ -16,7 +18,7 @@ export default function BackBtn() {
   const router = useRouter();
   return (
     <Btn onClick={() => router.back()}>
-      <Image src="back-btn.svg" alt="img" width={40} height={40} priority />
+      <Image src="back-btn.svg" alt="img" width={30} height={30} priority /> Back
     </Btn>
   );
 }
