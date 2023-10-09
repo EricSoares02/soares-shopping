@@ -6,7 +6,6 @@ import AddBtnCart from "@/utils/addToCart";
 import AddBtnFavorite from "@/utils/addToFavorite";
 import { devices } from "@/app/global.style";
 
-
 const ProductCase = styled.div`
   width: 100%;
   height: auto;
@@ -18,7 +17,6 @@ const ProductCase = styled.div`
     display: block;
     justify-content: center;
   }
-
 `;
 
 const ProductImg = styled.div`
@@ -39,9 +37,10 @@ const ProductImg = styled.div`
 `;
 
 const ProductDesc = styled.div`
-  width: 700px;
+  width: 500px;
   height: 700px;
   display: block;
+  justify-content: center;
   & h1 {
     display: flex;
     justify-content: center;
@@ -70,10 +69,10 @@ const BtnConteiner = styled.div`
   display: flex;
   justify-content: center;
   gap: 8px;
-  width: 700px;
+  width: 500px;
   height: auto;
   position: absolute;
-  bottom: 30px;
+  bottom: 50px;
   @media ${devices.lg} {
     justify-content: start;
   }
@@ -88,7 +87,6 @@ export default function Product(value: string) {
     return <Load />;
   }
 
-  
   return (
     <ProductCase>
       <ProductImg>

@@ -8,11 +8,17 @@ const Conteiner = styled.div`
   height: auto;
   position: absolute;
   top: 76px;
+  display: flex;
+  justify-content: center;
+  background-color: ${(props) => props.theme.colors.bg};
 `;
-
+const MainConteiner = styled.div`
+  width: ${(props) => props.theme.length};;
+  height: auto;
+`;
 const BtnCase = styled.div`
   width: 100%;
-  height: 40px;
+  height: 30px;
   padding: 15px 0 0 15px;
 `;
 
@@ -33,10 +39,12 @@ export default function ProductPage({
   return (
     <>
       <Conteiner>
+        <MainConteiner>
         <BtnCase>
           <BackBtn />
         </BtnCase>
         <ProductConteiner>{Product(searchParams.id)}</ProductConteiner>
+        </MainConteiner>
       </Conteiner>
     </>
   );
