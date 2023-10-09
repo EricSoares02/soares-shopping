@@ -5,8 +5,8 @@ import styled from "styled-components";
 import Image from "next/image";
 
 const ProductCase = styled.div`
-  width: 800px;
-  height: 300px;
+  width: 700px;
+  height: 212px;
   font-weight: 600;
   margin: 0 10px 10px 0;
   display: flex;
@@ -29,7 +29,7 @@ const ProductCase = styled.div`
 
 const Checked = styled.div`
   width: 100px;
-  height: 300px;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,8 +40,8 @@ const InputChecked = styled.input.attrs({ type: "checkbox" })`
 `;
 
 const ProductImgConteiner = styled.div`
-  width: 200px;
-  height: 300px;
+  width: 150px;
+  height: 100%;
   background-color: #aaa;
 `;
 const ProductImg = styled.img`
@@ -51,7 +51,7 @@ const ProductImg = styled.img`
 
 const ConteinerToAlign = styled.div`
   width: 100%;
-  height: 300px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   padding: 15px;

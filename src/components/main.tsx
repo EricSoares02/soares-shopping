@@ -12,6 +12,3 @@ const Conteiner = styled.main`
 export default function Main() {
   return <Conteiner></Conteiner>;
 }
-
-
-// 228x380 cada produto -- img 220x290

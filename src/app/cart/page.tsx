@@ -4,7 +4,6 @@ import styled from "styled-components";
 import ValuesCart from "@/components/unique-pages/cart/valueCart";
 import GetProductsCart from "@/components/unique-pages/cart/getProducts";
 
-
 const Conteiner = styled.div`
   width: 100%;
   height: auto;
@@ -15,15 +14,20 @@ const Conteiner = styled.div`
   align-items: center;
   background-color: ${(props) => props.theme.colors.bg};
 `;
+const MainConteiner = styled.div`
+  width: ${(props) => props.theme.length};
+  height: auto;
+  display: block;
+`;
 const BacBtnCase = styled.div`
   width: 100%;
-  height: auto;
+  height: 30px;
+  margin-bottom: 7px;
 `;
-const BigConteinerToAlign = styled.div``;
 
 const MidConteiner = styled.div`
   display: flex;
-  width: 1500px;
+  width: 100%;
   height: auto;
 `;
 
@@ -34,28 +38,26 @@ const ProductConteiner = styled.div`
   overflow-y: scroll;
   height: 795px;
   &::-webkit-scrollbar {
-  display:none;
-}
+    display: none;
+  }
 `;
 
 export default function Cart() {
   //pega os itens do localStorage e converte em Object, tornando-se o carrinho
   let cartArray = JSON.parse(localStorage.getItem("cartItem") || "[]");
-  console.log(cartArray); 
+  console.log(cartArray);
   return (
     <main>
       <Conteiner>
-        <BacBtnCase>
-          <BackBtn />
-        </BacBtnCase>
-        <BigConteinerToAlign>
+        <MainConteiner>
+          <BacBtnCase>
+            <BackBtn />
+          </BacBtnCase>
           <MidConteiner>
-            <ProductConteiner>
-              <div>{GetProductsCart(cartArray)}</div>
-            </ProductConteiner>
+            <ProductConteiner>{GetProductsCart(cartArray)}</ProductConteiner>
             {ValuesCart(cartArray)}
           </MidConteiner>
-        </BigConteinerToAlign>
+        </MainConteiner>
       </Conteiner>
     </main>
   );

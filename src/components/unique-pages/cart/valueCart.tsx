@@ -2,16 +2,11 @@ import { converterParaReal } from "@/hooks/useConversor";
 import styled from "styled-components";
 
 const PaymentConteiner = styled.div`
-  width: 500px;
-  height: auto;
+  width: 490px;
+  height: 500px;
   display: block;
   justify-content: center;
   align-items: center;
-`;
-const FinishBuy = styled.div`
-  width: 500px;
-  height: 500px;
-  display: block;
   background-color: ${(props) => props.theme.colors.white};
   padding: 20px;
 `;
@@ -80,7 +75,6 @@ export default function ValuesCart(cartArray: []) {
   
   return (
     <PaymentConteiner>
-      <FinishBuy>
         <Text>
           <h1>Resumo do Pedido</h1>
         </Text>
@@ -91,7 +85,6 @@ export default function ValuesCart(cartArray: []) {
         <AlignBtn>
           <PayBnt>Finalizar Compra</PayBnt>
         </AlignBtn>
-      </FinishBuy>
     </PaymentConteiner>
   );
 }

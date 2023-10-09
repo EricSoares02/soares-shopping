@@ -15,7 +15,6 @@ export default function Home() {
         <SearchMobile></SearchMobile>
         <Slider></Slider>
         {Products()}
-        
       </main>
       
     </>
