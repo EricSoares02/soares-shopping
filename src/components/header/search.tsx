@@ -28,7 +28,6 @@ const SearchInput = styled.input`
 `;
 
 export const ImageInput = styled.img`
-  translate: -40px 15px;
   width: 20px;
   height: 20px;
   @media ${devices.sm} {
@@ -36,22 +35,22 @@ export const ImageInput = styled.img`
   }
 `;
 
-const Submit = styled.input`
-  width: 1px;
-  height: 1px;
+const Submit = styled.button`
+  width: auto;
+  height: auto;
   background-color: transparent;
   border: none;
+  cursor: pointer;
+  translate: -40px 3px;
 `;
 
 export default function Search() {
-
   const router = useRouter();
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault()
+    event.preventDefault();
     const formData = new FormData(event.currentTarget);
-    const data = formData.get('text')
-    router.push(`/search?value=${data}`)
- 
+    const data = formData.get("text");
+    router.push(`/search?value=${data}`);
   }
   return (
     <DivSearch>
@@ -61,9 +60,10 @@ export default function Search() {
           name="text"
           placeholder="Search your new style here ..."
         />
-        <Submit type="submit" />
+        <Submit type="submit">
+          <ImageInput src="/lupa.svg"></ImageInput>
+        </Submit>
       </Form>
-      <ImageInput src="/lupa.svg"></ImageInput>
     </DivSearch>
   );
 }
