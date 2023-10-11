@@ -6,7 +6,8 @@ export const theme = {
     white: "#fff",
     headerBg2: "#1e6fd9",
     bg: "#f2f2f2",
-    blackBlue: "#033E8C"
+    blackBlue: "#033E8C",
+    yellow: "#FAC916"
   },
   transition:{
     transition: "1.2s"
