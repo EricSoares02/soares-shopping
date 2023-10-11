@@ -14,7 +14,7 @@ const DivOptions = styled.div`
   display: flex;
   gap: 32px;
   align-items: center;
-  justify-content: center;
+  justify-content: end;
 `;
 
 const ImageOptions = styled.img`
