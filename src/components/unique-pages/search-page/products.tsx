@@ -7,22 +7,23 @@ import Load from "@/components/loading/loading";
 import { devices } from "@/app/global.style";
 
 const ProductCase = styled.div`
-  width: 310px;
-  height: 450px;
-  font-weight: 600;
+  width: 280px;
+  height: 430px;
+  font-weight: 400;
   display: flex;
   flex-direction: column;
   transition: ${(props) => props.theme.transition.transition};
   padding-bottom: 50px;
   background-color: ${(props) => props.theme.colors.white};
+  box-shadow: 0 0 2px ${(props) => props.theme.colors.shadowcolor};
   &:hover {
     box-shadow: 0 0 7px ${(props) => props.theme.colors.shadowcolor};
   }
   @media ${devices.xl} {
-  width: 360px;
+    width: 360px;
   }
   @media ${devices.lg} {
-  width: 320px;
+    width: 320px;
   }
   @media ${devices.sm} {
     width: 280px;
@@ -31,9 +32,8 @@ const ProductCase = styled.div`
 
 const ProductImgConteiner = styled.div`
   width: 100%;
-  height: 350px;
+  height: 300px;
   background-color: #aaa;
-
 `;
 const ProductImg = styled.img`
   width: 100%;
@@ -42,28 +42,28 @@ const ProductImg = styled.img`
 
 const ProductDesc = styled.div`
   width: 100%;
-  padding-left: 7px;
- h2 {
-    font-size: 12px;
+  padding-left: 15px;
+  h2 {
+    font-size: 14px;
     padding-top: 15px;
   }
   h3 {
     color: ${(props) => props.theme.colors.shadowcolor};
-    font-size: 10px;
+    font-size: 11px;
   }
   @media ${devices.sm} {
-  height: 55px;
-  h2 {
-    font-size: 12px;
-  }
-  h3 {
-    font-size: 10px;
-  }
+    height: 55px;
+    h2 {
+      font-size: 12px;
+    }
+    h3 {
+      font-size: 10px;
+    }
   }
 `;
 const PriceAndButton = styled.div`
   width: 100%;
-  padding: 7px;
+  padding: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -71,11 +71,12 @@ const PriceAndButton = styled.div`
     font-size: 14px;
   }
   @media ${devices.sm} {
-    &p{
+    &p {
       font-size: 12px;
     }
   }
 `;
+
 
 export default function ProductsCaseSearch(params:string){
     const {data, isLoading} = useSearchProducts(params);
@@ -98,7 +99,6 @@ return (
           </ProductDesc>
           <PriceAndButton>
             <p>{converterParaReal(value.price_in_cent)}</p>
-            
           </PriceAndButton>
         </ProductCase>
       ))}
