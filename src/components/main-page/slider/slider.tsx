@@ -94,9 +94,10 @@ export default function Slider() {
       setSlideIdx((prev) => prev + 1);
     }
   }
-  function handleChangeImg(index: number) {
+  function handleChangeImgOnClick(index: number) {
     setSlideIdx(index);
   }
+ 
   return (
     <Conteiner>
       <BigConteiner>
@@ -113,7 +114,7 @@ export default function Slider() {
               key={item}
               style={handleChangeBtnColor(index)}
               className={index === slideIdx? "act" : "dot act"}
-              onClick={() => handleChangeImg(index)}
+              onClick={() => handleChangeImgOnClick(index)}
             ></IdxBall>
           ))}
         </IdxSliderConteiner>
