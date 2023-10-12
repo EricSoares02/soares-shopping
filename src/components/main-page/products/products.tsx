@@ -14,7 +14,7 @@ const Conteiner = styled.section`
   background-color: ${(props) => props.theme.colors.bg};
 `;
 const MainConteiner = styled.div`
-  width: ${(props) => props.theme.length};;
+  width: ${(props) => props.theme.length};
   height: auto;
 `;
 const Text = styled.div`

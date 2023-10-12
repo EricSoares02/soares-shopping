@@ -18,7 +18,7 @@ const Header = styled.header`
 `;
 
 const NavBarDiv = styled.div`
-  width: 1200px;
+  width: ${(props) => props.theme.length};
   height: 75px;
   display: flex;
   flex-direction: row;
