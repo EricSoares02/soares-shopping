@@ -135,7 +135,7 @@ const RemoveBtn = styled.button`
 export default function GetProductsCart(cartArray: []) {
   return (
     <>
-      {cartArray.map((item: any) => (
+      {cartArray.map((item: any, index) => (
         <div key={item.id}>
           <ProductCase key={item.id}>
             <Checked>
@@ -169,23 +169,43 @@ export default function GetProductsCart(cartArray: []) {
                   <QuatityBntLess
                     onClick={() => {
                       if (item.quatity > 1) {
-                        console.log('clicou em -')
+                        console.log("clicou em -");
                         item.quatity = item.quatity - 1;
-                        localStorage.setItem("cartItem", JSON.stringify(cartArray));
+                        localStorage.setItem(
+                          "cartItem",
+                          JSON.stringify(cartArray)
+                        );
                         window.location.reload();
-                      } 
+                      }
                     }}
                   >
                     -
                   </QuatityBntLess>
                   <p>Quantidade: {item.quatity}</p>
-                  <QuatityBntMore onClick={() => {
-                      console.log('clicou em +')
+                  <QuatityBntMore
+                    onClick={() => {
+                      console.log("clicou em +");
                       item.quatity = item.quatity + 1;
-                      localStorage.setItem("cartItem", JSON.stringify(cartArray));
+                      localStorage.setItem(
+                        "cartItem",
+                        JSON.stringify(cartArray)
+                      );
                       window.location.reload();
-                    }}>+</QuatityBntMore>
-                  <RemoveBtn>
+                    }}
+                  >
+                    +
+                  </QuatityBntMore>
+                  <RemoveBtn
+                    onClick={() => {
+                      cartArray.splice(index, 1);
+                      console.log(`remove item: ${item}`);
+                      localStorage.setItem(
+                        "cartItem",
+                        JSON.stringify(cartArray)
+                      );
+                      window.location.reload();
+                    }}
+                  >
                     <Image src={"lixeira.svg"} width={25} height={25} alt="" />
                   </RemoveBtn>
                 </QuatityCase>
