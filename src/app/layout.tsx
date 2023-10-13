@@ -20,7 +20,7 @@ body {
   overflow-x: hidden;
 }
 main{
-
+background-color: ${(props) => props.theme.colors.bg};
 position: absolute;
 top:75px;
 width: 100%;
