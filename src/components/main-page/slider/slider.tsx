@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { n } from "@/utils/techToUseRef";
+import { useState, useRef } from "react";
 import styled from "styled-components";
-import { theme } from "./../../../app/global.style";
 
 const Conteiner = styled.div`
   width: 100%;
@@ -42,13 +42,25 @@ const PrevBtn = styled.button`
   color: ${(props) => props.theme.colors.headerBg2};
   box-shadow: 0 0 7px ${(props) => props.theme.colors.shadowcolor};
 `;
+
+const Carrossel = styled.div`
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  width: 100%;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`;
 const ImgSliderConteiner = styled.div`
   width: 1120px;
   height: 100%;
+  flex: none;
 `;
 const ImgSlider = styled.img`
   width: 100%;
   height: 100%;
+  object-fit: cover;
 `;
 const IdxSliderConteiner = styled.div`
   width: 100%;
@@ -71,49 +83,61 @@ const IdxBall = styled.button`
 export default function Slider() {
   const photos = ["img3.jpg", "img1.jpg", "img2.jpg", "img4.jpg"];
   const [slideIdx, setSlideIdx] = useState(0);
-  function handleChangeBtnColor(index:number){
-    let isActive = false
-   
-    if (index===slideIdx) {
-      isActive = true
+  const carrossel = useRef(n)
+  
+  function handleChangeBtnColor(index: number) {
+    let isActive = false;
+
+    if (index === slideIdx) {
+      isActive = true;
     }
-   let color = {backgroundColor: isActive ? '#1e6fd9' : 'white'}
-    return  color
+    let color = { backgroundColor: isActive ? "#1e6fd9" : "white" };
+    return color;
   }
   function handlePrevImg() {
     if (slideIdx > 0) {
+      carrossel.current.scrollLeft -= carrossel.current.offsetWidth;
       setSlideIdx((prev) => prev - 1);
     } else {
+      carrossel.current.scrollLeft = carrossel.current.offsetWidth * photos.length ;
       setSlideIdx(photos.length - 1);
     }
   }
   function handleNextImg() {
     if (slideIdx === photos.length - 1) {
+      carrossel.current.scrollLeft = 0
       setSlideIdx(0);
     } else {
+      carrossel.current.scrollLeft += carrossel.current.offsetWidth;
       setSlideIdx((prev) => prev + 1);
     }
   }
   function handleChangeImgOnClick(index: number) {
+    carrossel.current.scrollLeft = carrossel.current.offsetWidth * index;
     setSlideIdx(index);
   }
- 
+
   return (
     <Conteiner>
       <BigConteiner>
         <SliderConteiner>
           <PrevBtn onClick={handlePrevImg}>{"<"}</PrevBtn>
-          <ImgSliderConteiner>
-            <ImgSlider src={photos[slideIdx]} />
-          </ImgSliderConteiner>
+          <Carrossel ref={carrossel}>
+            {photos.map((item, index) => (
+              <ImgSliderConteiner key={index}>
+                <ImgSlider src={item} />
+              </ImgSliderConteiner>
+            ))}
+          </Carrossel>
           <NextBtn onClick={handleNextImg}>{">"}</NextBtn>
         </SliderConteiner>
+
         <IdxSliderConteiner>
           {photos.map((item, index) => (
             <IdxBall
               key={item}
               style={handleChangeBtnColor(index)}
-              className={index === slideIdx? "act" : "dot act"}
+              className={index === slideIdx ? "act" : "dot act"}
               onClick={() => handleChangeImgOnClick(index)}
             ></IdxBall>
           ))}
@@ -121,4 +145,10 @@ export default function Slider() {
       </BigConteiner>
     </Conteiner>
   );
+}
+
+{
+  /* <ImgSliderConteiner>
+<ImgSlider src={photos[slideIdx]} />
+</ImgSliderConteiner> */
 }
