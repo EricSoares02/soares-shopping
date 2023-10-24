@@ -35,7 +35,7 @@ const CaseForQuatity = styled.div`
 const QuatityInCart = styled.div`
   width: 15px;
   height: 15px;
-  background-color: ${(props) => props.theme.colors.yellow};
+  background-color: ${(props) => props.theme.colors.blue};
   color: ${(props) => props.theme.colors.white};
   border-radius: 9999px;
   font-size: 10px;
@@ -46,7 +46,7 @@ const QuatityInCart = styled.div`
 const EffectToQuatityInCart = styled.div`
   width: 15px;
   height: 15px;
-  background-color: ${(props) => props.theme.colors.yellow};
+  background-color: ${(props) => props.theme.colors.blue};
   border-radius: 9999px;
   animation: ${ping} 1s cubic-bezier(0, 0, 0.2, 1) infinite;
   translate: 0px 15px;

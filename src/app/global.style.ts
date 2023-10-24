@@ -7,7 +7,7 @@ export const theme = {
     headerBg2: "#FFF953",
     bg: "#f2f2f2",
     blackBlue: "#033E8C",
-    yellow: "#1e6fd9"
+    blue: "#1e6fd9"
   },
   transition:{
     transition: "1.2s"
