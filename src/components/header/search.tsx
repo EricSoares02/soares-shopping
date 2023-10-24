@@ -25,6 +25,7 @@ const SearchInput = styled.input`
   background-color: ${theme.colors.bg};
   padding-left: 30px;
   outline: 0;
+  box-shadow: 0 0 5px ${(props) => props.theme.colors.shadowcolor};
 `;
 
 export const ImageInput = styled.img`

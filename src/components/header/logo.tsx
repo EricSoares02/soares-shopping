@@ -8,7 +8,7 @@ const DivLogo = styled.div`
 `;
 const LinkLogo = styled.a`
   text-decoration: none;
-  color: ${(props) => props.theme.colors.white};
+  color: ${(props) => props.theme.colors.blackBlue};
   font-weight: bolder;
   font-size: 18px;
   cursor: pointer;

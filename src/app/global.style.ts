@@ -4,16 +4,17 @@ export const theme = {
   colors: {
     shadowcolor: "#aaa",
     white: "#fff",
-    headerBg2: "#1e6fd9",
+    headerBg2: "#FFF953",
     bg: "#f2f2f2",
     blackBlue: "#033E8C",
-    yellow: "#FAC916"
+    yellow: "#1e6fd9"
   },
   transition:{
     transition: "1.2s"
   },
   length: "1200px"
 };
+// old main color headerBg2: '#1e6fd9', yellow: "#FAC916"
 
 // breakpoints for all screen types 
 const breakpoints = {

@@ -9,7 +9,7 @@ const ping = keyframes`
 `;
 
 const DivOptions = styled.div`
-  width: 300px;
+  width: auto;
   height: 100%;
   display: flex;
   gap: 32px;
@@ -36,6 +36,7 @@ const QuatityInCart = styled.div`
   width: 15px;
   height: 15px;
   background-color: ${(props) => props.theme.colors.yellow};
+  color: ${(props) => props.theme.colors.white};
   border-radius: 9999px;
   font-size: 10px;
   display: flex;
