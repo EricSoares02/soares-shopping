@@ -29,7 +29,7 @@ const NextBtn = styled.button`
   width: 40px;
   height: 60px;
   font-size: 18px;
-  color: ${(props) => props.theme.colors.headerBg2};
+  color: ${(props) => props.theme.colors.blue};
   box-shadow: 0 0 7px ${(props) => props.theme.colors.shadowcolor};
 `;
 const PrevBtn = styled.button`
@@ -39,7 +39,7 @@ const PrevBtn = styled.button`
   width: 40px;
   height: 60px;
   font-size: 18px;
-  color: ${(props) => props.theme.colors.headerBg2};
+  color: ${(props) => props.theme.colors.blue};
   box-shadow: 0 0 7px ${(props) => props.theme.colors.shadowcolor};
 `;
 
@@ -73,11 +73,11 @@ const IdxSliderConteiner = styled.div`
 const IdxBall = styled.button`
   width: 11px;
   height: 11px;
-  border: 2px solid ${(props) => props.theme.colors.headerBg2};
+  border: 2px solid ${(props) => props.theme.colors.blue};
   border-radius: 9999px;
   cursor: pointer;
   :focus {
-    background-color: ${(props) => props.theme.colors.headerBg2};
+    background-color: ${(props) => props.theme.colors.blue};
   }
 `;
 export default function Slider() {
