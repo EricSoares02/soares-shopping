@@ -155,7 +155,7 @@ export default function Categories() {
           <CategoriesConteiner ref={category}>
             {CategoriesArray.map((category) => (
               <CategoryCase key={category.title}>
-                <Link href={`category/${category.title}`}>
+                <Link href={`category?value=${category.title}`}>
                   <CategoryImgDefault src={category.img} />
                   <CategoryImgHover src={category.imgHover} />
                 </Link>
