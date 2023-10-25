@@ -94,7 +94,7 @@ export default function Categories() {
       imgHover: "ball-categoryHover.svg",
     },
     {
-      title: "Roupas",
+      title: "Moda",
       img: "roupas-category.svg",
       imgHover: "roupas-categoryHover.svg",
     },
@@ -124,45 +124,17 @@ export default function Categories() {
       imgHover: "ferramentas-categoryHover.svg",
     },
     {
-      title: "Ferramentas",
-      img: "ferramentas-category.svg",
-      imgHover: "ball-categoryHover.svg",
+      title: "Brinquedos",
+      img: "toy-category.svg",
+      imgHover: "toy-categoryHover.svg",
     },
     {
-      title: "Ferramentas",
-      img: "ferramentas-category.svg",
-      imgHover: "ball-categoryHover.svg",
+      title: "Automóveis",
+      img: "volante-category.svg",
+      imgHover: "volante-categoryHover.svg",
     },
-    {
-      title: "Ferramentas",
-      img: "ferramentas-category.svg",
-      imgHover: "ball-categoryHover.svg",
-    },
-    {
-      title: "Ferramentas",
-      img: "ferramentas-category.svg",
-      imgHover: "ball-categoryHover.svg",
-    },
-    {
-      title: "Ferramentas",
-      img: "ferramentas-category.svg",
-      imgHover: "ball-categoryHover.svg",
-    },
-    {
-      title: "Ferramentas",
-      img: "ferramentas-category.svg",
-      imgHover: "ball-categoryHover.svg",
-    },
-    {
-      title: "Ferramentas",
-      img: "ferramentas-category.svg",
-      imgHover: "ball-categoryHover.svg",
-    },
-    {
-      title: "Ferramentas",
-      img: "ferramentas-category.svg",
-      imgHover: "ball-categoryHover.svg",
-    },
+    
+    
   ];
 
   const category = useRef(n);
@@ -170,7 +142,7 @@ export default function Categories() {
   return (
     <Conteiner>
       <MainConteiner>
-        <Text> Categortias Populares </Text>
+        <Text> Categorias Populares </Text>
         <ConteinerSlider>
           <Btn
             onClick={() => {
