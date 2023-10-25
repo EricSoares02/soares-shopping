@@ -8,6 +8,11 @@ import Categories from './../components/main-page/category/categories';
 
 register();
 
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+
 const Separetor = styled.div`
 width: 100%;
 height: 20px;
