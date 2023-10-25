@@ -1,11 +1,12 @@
 "use client";
+import {register} from "swiper/element/bundle"
+import styled from "styled-components";
 import SearchMobile from "@/components/header/searchMobile";
 import Slider from "@/components/main-page/slider/slider";
 import Products from "@/components/main-page/products/products";
-import Footer from "@/components/footer/footer";
-import styled from "styled-components";
 import Categories from './../components/main-page/category/categories';
 
+register();
 
 const Separetor = styled.div`
 width: 100%;
