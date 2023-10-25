@@ -2,8 +2,8 @@ import { api } from "@/services/api";
 import { useQuery } from "react-query";
 
 const getProducts = async () => {
-  const url = process.env.URL_API;
-  console.log(url)
+   const url = process.env.REACT_APP_URL;
+  console.log('url é:', url)
   return api
     .get( url || 'http://localhost:3333/produtos/')
     .then((response) => response.data);
