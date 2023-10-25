@@ -82,6 +82,7 @@ const IdxBall = styled.button`
 `;
 export default function Slider() {
   const photos = ["img3.jpg", "img1.jpg", "img2.jpg", "img4.jpg"];
+
   const [slideIdx, setSlideIdx] = useState(0);
   const carrossel = useRef(n)
   
@@ -145,10 +146,4 @@ export default function Slider() {
       </BigConteiner>
     </Conteiner>
   );
-}
-
-{
-  /* <ImgSliderConteiner>
-<ImgSlider src={photos[slideIdx]} />
-</ImgSliderConteiner> */
 }

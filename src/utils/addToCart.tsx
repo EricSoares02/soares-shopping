@@ -18,7 +18,7 @@ const Btn = styled.button`
   color: ${(props) => props.theme.colors.white};
   transition: ${(props) => props.theme.transition.transition};
   &:hover {
-    background-color: ${(props) => props.theme.colors.headerBg2};
+    background-color: ${(props) => props.theme.colors.blue};
   }
   @media ${devices.lg} {
     width: 250px;
